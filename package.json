@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/clean-dist.mjs && tsc",
+    "build": "node scripts/build-static.mjs",
     "dev": "npm run build && node scripts/dev-server.mjs",
     "typecheck": "tsc --noEmit"
   },

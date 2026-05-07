@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.chrome-headless/
+npm-debug.log*
+*.crdownload
+images/lea.mp4

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Michael Eleman">
+  <rect width="400" height="400" fill="#15001f"/>
+  <circle cx="200" cy="155" r="82" fill="#f89d35"/>
+  <path d="M88 352c18-77 62-118 112-118s94 41 112 118" fill="#f89d35"/>
+  <text x="200" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="62" font-weight="700" fill="#2c003e">ME</text>
+</svg>

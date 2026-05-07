@@ -1,0 +1,13 @@
+{
+  "name": "lea-foundation-typescript-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/clean-dist.mjs && tsc",
+    "dev": "npm run build && node scripts/dev-server.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

@@ -1958,9 +1958,21 @@ const formSubmit = (text: string): HTMLButtonElement =>
     },
   });
 
-const interestForm = (formType: string, title: string, text: string, submitText: string, fields: HTMLElement[]): HTMLFormElement =>
-  create("form", {
-    attrs: { action: scriptAction, method: "post" },
+const interestForm = (formType: string, title: string, text: string, submitText: string, fields: HTMLElement[]): HTMLFormElement => {
+  const submitButton = formSubmit(submitText);
+  const status = create("p", {
+    attrs: { "aria-live": "polite" },
+    style: {
+      minHeight: "22px",
+      margin: "0",
+      color: "#eadbed",
+      fontSize: "0.92rem",
+      lineHeight: "1.35",
+    },
+  });
+
+  const form = create("form", {
+    attrs: { action: scriptAction, method: "post", autocomplete: "off" },
     style: {
       display: "grid",
       alignContent: "start",
@@ -1979,9 +1991,53 @@ const interestForm = (formType: string, title: string, text: string, submitText:
         copy(text, { color: "#eadbed", fontSize: "0.98rem", lineHeight: "1.5" })
       ),
       ...fields,
-      formSubmit(submitText),
+      submitButton,
+      status,
     ],
   });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const originalText = submitButton.textContent ?? submitText;
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+    applyStyle(submitButton, {
+      opacity: "0.72",
+      cursor: "wait",
+      transform: "translateY(1px)",
+    });
+    status.textContent = "Sending your details...";
+
+    fetch(scriptAction, {
+      method: "POST",
+      body: new FormData(form),
+      mode: "no-cors",
+    })
+      .then(() => {
+        form.reset();
+        status.textContent = "Thank you. Your details have been submitted.";
+      })
+      .catch(() => {
+        status.textContent = "Something went wrong. Please try again or email leaorganization@gmail.com.";
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+        applyStyle(submitButton, {
+          opacity: "1",
+          cursor: "pointer",
+          transform: "translateY(0)",
+        });
+      });
+  });
+
+  return form;
+};
 
 const volunteerPage = (): HTMLElement =>
   create("main", {

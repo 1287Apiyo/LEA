@@ -14,7 +14,7 @@ const shell = [
   '<meta charset="utf-8">',
   '<meta name="viewport" content="width=device-width, initial-scale=1">',
   "<title>LEA Organization</title>",
-  '<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">',
+  '<link rel="icon" href="/images/favicon.png" type="image/png">',
   "</head>",
   "<body>",
   '<div id="app"></div>',

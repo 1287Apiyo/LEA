@@ -3066,9 +3066,10 @@ const footerBrandColumn = (): HTMLElement =>
     create("div", {
       style: { display: "flex", gap: "10px", marginTop: "2px", flexWrap: "wrap" },
       children: [
-        footerSocial("IG", "https://www.instagram.com/lea_orgke/"),
-        footerSocial("X", "https://x.com/lea_org"),
-        footerSocial("in", "https://www.linkedin.com/in/lea-organization-ke/"),
+        footerSocial("instagram", "https://www.instagram.com/lea_orgke/profilecard/?igsh=NTQwanp2ZW5zOGow", "Instagram"),
+        footerSocial("x", "https://x.com/lea_org?t=jmf5UOhffrmsP_P7hHjw7g&s=09", "X"),
+        footerSocial("tiktok", "https://www.tiktok.com/@leaorganizationke?_t=8qodYvCewNh&_r=1", "TikTok"),
+        footerSocial("linkedin", "https://www.linkedin.com/in/lea-organization-ke/", "LinkedIn"),
       ],
     })
   );
@@ -3091,12 +3092,18 @@ const footerContactCard = (label: string, value: string, href: string): HTMLAnch
     ],
   });
 
-const footerSocial = (label: string, href: string): HTMLAnchorElement => {
-  const socialColors: Record<string, string> = { IG: "#e4405f", X: "#ffffff", in: "#0a66c2" };
+type FooterSocialIcon = "instagram" | "x" | "tiktok" | "linkedin";
+
+const footerSocial = (icon: FooterSocialIcon, href: string, label: string): HTMLAnchorElement => {
+  const socialColors: Record<FooterSocialIcon, string> = {
+    instagram: "#e4405f",
+    x: "#ffffff",
+    tiktok: "#25f4ee",
+    linkedin: "#0a66c2",
+  };
 
   return create("a", {
     attrs: { href, "aria-label": label, target: "_blank", rel: "noreferrer" },
-    text: label,
     style: {
       width: "44px",
       height: "44px",
@@ -3104,12 +3111,43 @@ const footerSocial = (label: string, href: string): HTMLAnchorElement => {
       placeItems: "center",
       border: "1px solid rgba(255,255,255,0.18)",
       background: "rgba(255,255,255,0.06)",
-      color: socialColors[label] ?? theme.white,
-      fontSize: "0.84rem",
-      fontWeight: "700",
+      color: socialColors[icon],
       textDecoration: "none",
     },
+    children: [footerSocialIcon(icon)],
   });
+};
+
+const footerSocialIcon = (icon: FooterSocialIcon): SVGSVGElement => {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("width", "20");
+  svg.setAttribute("height", "20");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "2");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
+  svg.setAttribute("aria-hidden", "true");
+
+  const pathSets: Record<FooterSocialIcon, string[]> = {
+    instagram: [
+      "M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5",
+      "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37",
+      "M17.5 6.5h.01",
+    ],
+    x: ["M4 4l16 16", "M20 4L4 20"],
+    tiktok: ["M14 3v10.2a4.2 4.2 0 1 1-4.2-4.2", "M14 3c1 3 3 5 6 5"],
+    linkedin: ["M4 9v11", "M4 4.5v.01", "M10 20v-7a4 4 0 0 1 8 0v7", "M10 9v11"],
+  };
+
+  pathSets[icon].forEach((d) => {
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", d);
+    svg.appendChild(path);
+  });
+
+  return svg;
 };
 
 const footerLinksColumn = (): HTMLElement => {

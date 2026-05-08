@@ -569,12 +569,12 @@ const storyTextPanel = (): HTMLElement =>
       stack(
         14,
         eyebrow("Our Story", { color: theme.orange }),
-        heading("Born from a love for coding and a reason to share it.", 2, {
+        heading("Founded by two coders who wanted to share what changed their own lives.", 2, {
           color: theme.white,
           maxWidth: "940px",
           fontSize: currentBreakpoint === "desktop" ? "2.2rem" : "1.82rem",
         }),
-        copy("LEA grew from a simple conviction: children who are often left behind should meet technology early, not as something distant, but as something they can use, question, and build with.", {
+        copy("LEA was founded on 14 May 2024 by Anne Apiyo and Felistus Kioko. It began with a shared love for coding and a belief that children who are often left behind should meet technology early, not as something distant, but as something they can use, question, and build with.", {
           maxWidth: "940px",
           color: "#f4e8f7",
           fontWeight: "700",

@@ -3712,7 +3712,7 @@ const aboutTeamCard = (person: Person): HTMLElement =>
         children: [
           stack(
             8,
-            heading(person.name, 3, { color: theme.white, fontSize: "1.28rem" }),
+            heading(person.name, 3, { color: theme.orange, fontSize: "1.28rem" }),
             copy(person.role, { color: "#eadbed", fontSize: "0.96rem", lineHeight: "1.45" })
           ),
         ],

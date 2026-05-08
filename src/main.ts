@@ -465,12 +465,13 @@ const landingHero = (): HTMLElement =>
           },
           children: [
             stack(
-              20,
+              18,
+              eyebrow("LEA Organization", { color: theme.orange }),
               create("h1", {
                 style: {
                   margin: "0",
                   color: theme.white,
-                  maxWidth: currentBreakpoint === "desktop" ? "610px" : "430px",
+                  maxWidth: currentBreakpoint === "desktop" ? "720px" : "430px",
                   fontFamily: '"Times New Roman", Times, serif',
                   fontSize: currentBreakpoint === "desktop" ? "4rem" : "2.75rem",
                   fontWeight: "700",
@@ -479,20 +480,20 @@ const landingHero = (): HTMLElement =>
                   textShadow: "0 3px 18px rgba(0,0,0,0.6)",
                 },
                 children: [
-                  "Empowering ",
-                  create("span", { text: "Future", style: { color: theme.orange } }),
-                  " Engineers",
+                  "Helping young learners ",
+                  create("span", { text: "find their way", style: { color: theme.orange } }),
+                  " into code.",
                 ],
               }),
-              copy("We introduce children and teens to coding early, then keep showing up with trainers, volunteers, projects, and patient support.", {
+              copy("From first Scratch games to web pages, app ideas, and hackathons, LEA gives learners patient teaching, real projects, and people who keep showing up.", {
                 color: theme.white,
-                maxWidth: currentBreakpoint === "desktop" ? "600px" : "390px",
+                maxWidth: currentBreakpoint === "desktop" ? "680px" : "390px",
                 fontWeight: "700",
                 textShadow: "0 2px 12px rgba(0,0,0,0.45)",
               }),
               create("div", {
                 style: { display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "8px" },
-                children: [actionButton("/programs", "Explore Programs", "orange"), actionButton("/volunteer", "Join Our Mission", "outline")],
+                children: [actionButton("/programs", "See The Programs", "orange"), actionButton("/volunteer", "Volunteer With Us", "outline")],
               })
             ),
           ],
@@ -573,7 +574,7 @@ const storyTextPanel = (): HTMLElement =>
           maxWidth: "940px",
           fontSize: currentBreakpoint === "desktop" ? "2.2rem" : "1.82rem",
         }),
-        copy("LEA began on 14 May 2024, founded by Anne Apiyo and Felistus Kioko. It started with a shared love for coding and a feeling that children who are often left behind should meet technology early, not as something distant, but as something they can use, question, and build with.", {
+        copy("LEA grew from a simple conviction: children who are often left behind should meet technology early, not as something distant, but as something they can use, question, and build with.", {
           maxWidth: "940px",
           color: "#f4e8f7",
           fontWeight: "700",
@@ -3231,13 +3232,13 @@ const aboutHero = (): HTMLElement =>
             stack(
               18,
               eyebrow("About LEA Organization", { color: theme.orange }),
-              heading("Coding can open a door. We help learners walk through it.", 1, {
+              heading("A gentle first step into coding can change what a learner believes is possible.", 1, {
                 color: theme.white,
                 maxWidth: currentBreakpoint === "desktop" ? "760px" : "100%",
                 fontSize: currentBreakpoint === "desktop" ? "4rem" : "2.75rem",
                 textShadow: "0 4px 22px rgba(0,0,0,0.48)",
               }),
-              copy("LEA was founded by Anne Apiyo and Felistus Kioko on 14 May 2024. We teach coding early, build confidence slowly, and give learners steady support from trainers and volunteers.", {
+              copy("LEA creates learning spaces where children and teens can ask questions, try code for themselves, and grow with steady support from trainers and volunteers.", {
                 color: theme.white,
                 maxWidth: "720px",
                 fontWeight: "700",
@@ -3273,11 +3274,11 @@ const aboutMissionSection = (): HTMLElement =>
             stack(
               16,
               eyebrow("Who We Are", { color: theme.orange }),
-              heading("Started by two coders who wanted to give more children a fair chance.", 2, {
+              heading("A learning community built around access, patience, and confidence.", 2, {
                 fontSize: currentBreakpoint === "desktop" ? "2.65rem" : "2rem",
               }),
               copy("In many communities, access to technology still decides who gets to imagine a future in it. LEA exists so that background does not decide whether a child gets to learn, build, and belong in the digital world."),
-              copy("We use coding workshops, hackathons, student projects, and community sessions to help learners think boldly, create confidently, and discover possibilities they may not have seen before."),
+              copy("Our sessions are practical and human. Learners build small things first, gain confidence, ask better questions, and slowly begin to see themselves as creators."),
             ),
           ],
         }),

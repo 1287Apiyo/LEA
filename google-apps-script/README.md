@@ -6,10 +6,10 @@ Use `website-forms.gs` in Google Apps Script.
 
 - One Google Spreadsheet named `LEA Organization Website Form Responses`.
 - Four separate tabs:
-  - `Volunteer`
-  - `Donate`
+  - `Volunteers`
+  - `Donors`
   - `Contact`
-  - `Partner`
+  - `Partners`
 - Each tab has its own columns.
 - Every submission also sends an email notification to `leaorganizationke@gmail.com`.
 

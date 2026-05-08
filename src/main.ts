@@ -1929,13 +1929,13 @@ const formSelect = (label: string, name: string, options: string[]): HTMLElement
     ],
   });
 
-const formTextArea = (label: string, name: string, placeholder: string): HTMLElement =>
+const formTextArea = (label: string, name: string, placeholder: string, required = true): HTMLElement =>
   create("label", {
     style: fieldLabelStyle(),
     children: [
       label,
       create("textarea", {
-        attrs: { name, placeholder, required: true, rows: 5 },
+        attrs: { name, placeholder, required, rows: 5 },
         style: { ...fieldControlStyle(), minHeight: "132px", resize: "vertical" },
       }),
     ],
@@ -2341,7 +2341,7 @@ const volunteerInterestForm = (): HTMLFormElement =>
     formInput("Phone number", "phone", "+254 ...", "tel"),
     formSelect("How would you like to help?", "volunteerArea", ["Teaching / Mentorship", "Program support", "Events and logistics", "Photography / media", "General volunteering"]),
     formSelect("Availability", "availability", ["Weekends", "Weekdays", "Online support", "Flexible"]),
-    formTextArea("Short note", "message", "Tell us about your skills, experience, or why you want to volunteer."),
+    formTextArea("Additional info", "message", "Optional: tell us about your skills, experience, or why you want to volunteer.", false),
   ]);
 
 const donatePage = (): HTMLElement =>
@@ -2619,7 +2619,7 @@ const partnerInterestForm = (): HTMLFormElement =>
     formInput("Email address", "email", "you@example.com", "email"),
     formInput("Phone number", "phone", "+254 ...", "tel"),
     formSelect("Partnership interest", "partnerArea", ["Host a program", "Sponsor devices/resources", "Corporate volunteering", "Training collaboration", "Other partnership"]),
-    formTextArea("What would you like to build with LEA?", "message", "Share the learners, location, timeline, or support you have in mind."),
+    formTextArea("Additional info", "message", "Optional: share the learners, location, timeline, or support you have in mind.", false),
   ]);
 
 const donateInterestForm = (): HTMLFormElement =>
@@ -2629,7 +2629,7 @@ const donateInterestForm = (): HTMLFormElement =>
     formInput("Phone number", "phone", "+254 ...", "tel"),
     formSelect("Donation focus", "donationFocus", ["Learning materials", "Devices / equipment", "Program meals and transport", "Events and graduations", "General support"]),
     formInput("Estimated amount or support", "amount", "Amount, items, or services", "text", false),
-    formTextArea("Message", "message", "Tell us how you would like to support."),
+    formTextArea("Additional info", "message", "Optional: tell us how you would like to support.", false),
   ]);
 
 const contactInfoSection = (): HTMLElement =>

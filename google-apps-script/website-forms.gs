@@ -4,7 +4,7 @@ const SPREADSHEET_ID_PROPERTY = "LEA_FORM_RESPONSES_SPREADSHEET_ID";
 
 const FORM_CONFIG = {
   Volunteer: {
-    sheetName: "Volunteer",
+    sheetName: "Volunteers",
     columns: [
       ["Timestamp", "timestamp"],
       ["Full Name", "fullName"],
@@ -16,7 +16,7 @@ const FORM_CONFIG = {
     ],
   },
   Donate: {
-    sheetName: "Donate",
+    sheetName: "Donors",
     columns: [
       ["Timestamp", "timestamp"],
       ["Full Name", "fullName"],
@@ -39,7 +39,7 @@ const FORM_CONFIG = {
     ],
   },
   Partner: {
-    sheetName: "Partner",
+    sheetName: "Partners",
     columns: [
       ["Timestamp", "timestamp"],
       ["Organization Name", "organization"],

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LEA Organization">
+  <circle cx="32" cy="32" r="30" fill="#ffffff"/>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#2c003e" stroke-width="2"/>
+  <path d="M20 18h20v6H26v16h14v6H20z" fill="#050505"/>
+  <path d="M28 30h12v7H28z" fill="#8a22d6"/>
+  <path d="M14 30l-8 4 8 4v-4l6-4-6-4z" fill="#f89d35"/>
+  <path d="M50 30l8 4-8 4v-4l-6-4 6-4z" fill="#f89d35"/>
+</svg>

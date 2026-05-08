@@ -15,7 +15,7 @@ const shell = [
   '<meta charset="utf-8">',
   '<meta name="viewport" content="width=device-width, initial-scale=1">',
   "<title>LEA Organization</title>",
-  '<link rel="icon" href="/images/lea-logo-transparent.png" type="image/png">',
+  '<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">',
   "</head>",
   "<body>",
   '<div id="app"></div>',
@@ -32,6 +32,7 @@ await writeFile(path.join(dist, "index.html"), shell);
 
 const sourceFiles = ["src/data.ts", "src/main.ts", "src/programs.ts"];
 const referencedAssets = new Set();
+referencedAssets.add("images/favicon.svg");
 
 for (const sourceFile of sourceFiles) {
   const content = await readFile(path.join(root, sourceFile), "utf8");

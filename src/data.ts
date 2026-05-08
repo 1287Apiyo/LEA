@@ -1,4 +1,4 @@
-export type PageId = "home" | "about" | "programs" | "projects" | "events" | "volunteer" | "contact";
+export type PageId = "home" | "about" | "programs" | "projects" | "events" | "volunteer" | "donate" | "contact";
 
 export type NavItem = {
   id: PageId;
@@ -71,7 +71,7 @@ export const homeCards: Card[] = [
     text: "Your support fuels learning resources, devices, sessions, and opportunities for children who lack access.",
     image: "images/LEA pics/LEA-24.jpg",
     alt: "LEA learners sharing ideas",
-    href: "/contact",
+    href: "/donate",
   },
   {
     title: "Become a Volunteer",

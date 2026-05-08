@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const port = Number(process.env.PORT || 4173);
-const routes = new Set(["/", "/about", "/programs", "/projects", "/events", "/volunteer", "/contact"]);
+const routes = new Set(["/", "/about", "/programs", "/projects", "/events", "/volunteer", "/donate", "/contact"]);
 
 const shell = [
   "<!doctype html>",

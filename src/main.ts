@@ -34,7 +34,7 @@ const breakpoint = (): Breakpoint => (window.innerWidth < 1060 ? "mobile" : "des
 
 const pageFromPath = (): PageId => {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
-  if (path === "/about" || path === "/programs" || path === "/projects" || path === "/events" || path === "/volunteer" || path === "/contact") {
+  if (path === "/about" || path === "/programs" || path === "/projects" || path === "/events" || path === "/volunteer" || path === "/donate" || path === "/contact") {
     return path.slice(1) as PageId;
   }
   return "home";
@@ -154,7 +154,7 @@ const navLink = (href: string, label: string, active: boolean): HTMLAnchorElemen
 const donateButton = (): HTMLAnchorElement =>
   interactive(
     create("a", {
-      attrs: { href: "/contact" },
+      attrs: { href: "/donate" },
       text: "Donate",
       style: {
         display: currentBreakpoint === "desktop" ? "inline-flex" : "none",
@@ -2046,7 +2046,7 @@ const volunteerHero = (): HTMLElement =>
               }),
               create("div", {
                 style: { display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "8px" },
-                children: [actionButton("#sign-up", "Volunteer Form"), actionButton("/contact", "Partner Or Donate", "outline")],
+                children: [actionButton("#sign-up", "Volunteer Form"), actionButton("/donate", "Donate", "outline")],
               })
             ),
           ],
@@ -2288,11 +2288,131 @@ const volunteerInterestForm = (): HTMLFormElement =>
     formTextArea("Short note", "message", "Tell us about your skills, experience, or why you want to volunteer."),
   ]);
 
+const donatePage = (): HTMLElement =>
+  create("main", {
+    attrs: { "aria-label": "Donate to LEA Organization" },
+    style: { background: theme.paper },
+    children: [donateHero(), donateFormSection(), landingFooter()],
+  });
+
+const donateHero = (): HTMLElement =>
+  create("section", {
+    style: {
+      position: "relative",
+      minHeight: currentBreakpoint === "desktop" ? "520px" : "500px",
+      display: "grid",
+      alignItems: "center",
+      overflow: "hidden",
+      background: theme.plum,
+    },
+    children: [
+      image("images/LEA pics/LEA-29.jpg", "LEA learners and volunteers during a community moment", {
+        position: "absolute",
+        inset: "0",
+        zIndex: "0",
+        objectPosition: "center",
+        filter: "brightness(0.38) contrast(1.1) saturate(1.04)",
+      }),
+      create("div", {
+        attrs: { "aria-hidden": "true" },
+        style: {
+          position: "absolute",
+          inset: "0",
+          zIndex: "1",
+          background: "linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(44,0,62,0.82) 52%, rgba(0,0,0,0.34) 100%)",
+        },
+      }),
+      container(
+        create("div", {
+          style: { position: "relative", zIndex: "2", maxWidth: currentBreakpoint === "desktop" ? "780px" : "100%" },
+          children: [
+            stack(
+              18,
+              eyebrow("Donate", { color: theme.orange }),
+              create("h1", {
+                style: {
+                  margin: "0",
+                  color: theme.white,
+                  maxWidth: "760px",
+                  fontFamily: '"Times New Roman", Times, serif',
+                  fontSize: currentBreakpoint === "desktop" ? "4rem" : "2.75rem",
+                  fontWeight: "700",
+                  lineHeight: "1.05",
+                  letterSpacing: "0",
+                  textShadow: "0 4px 22px rgba(0,0,0,0.52)",
+                },
+                children: ["Fuel the ", create("span", { text: "mission", style: { color: theme.orange } }), "."],
+              }),
+              copy("Your support helps LEA provide learning resources, devices, sessions, meals, transport, and opportunities for young learners who deserve access to technology.", {
+                color: theme.white,
+                maxWidth: "720px",
+                fontWeight: "700",
+                textShadow: "0 2px 12px rgba(0,0,0,0.48)",
+              }),
+              actionButton("#donate-form", "Start Donation", "orange"),
+            ),
+          ],
+        })
+      ),
+    ],
+  });
+
+const donateFormSection = (): HTMLElement =>
+  section(
+    theme.white,
+    currentBreakpoint === "desktop" ? "86px 0 96px" : "62px 0 70px",
+    container(
+      create("div", {
+        attrs: { id: "donate-form" },
+        style: {
+          display: "grid",
+          gridTemplateColumns: currentBreakpoint === "desktop" ? "0.85fr 1.15fr" : "1fr",
+          gap: currentBreakpoint === "desktop" ? "42px" : "28px",
+          alignItems: "start",
+        },
+        children: [
+          stack(
+            18,
+            eyebrow("Donation Support", { color: theme.orange }),
+            heading("Choose what your gift should strengthen.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
+            copy("Every contribution helps us keep practical learning within reach. You can support materials, devices, transport, events, or general program delivery."),
+            create("div", {
+              style: { display: "grid", gap: "12px", marginTop: "8px" },
+              children: [
+                donationFocusCard("Learning materials", "Printed guides, project resources, and learner support materials."),
+                donationFocusCard("Devices and equipment", "Laptops, accessories, internet support, and classroom tools."),
+                donationFocusCard("Meals, transport, and events", "The practical support that helps learners and volunteers show up."),
+              ],
+            })
+          ),
+          donateInterestForm(),
+        ],
+      })
+    )
+  );
+
+const donationFocusCard = (title: string, text: string): HTMLElement =>
+  create("article", {
+    style: {
+      padding: "18px",
+      background: theme.paper,
+      borderLeft: `5px solid ${theme.orange}`,
+      boxShadow: "0 14px 30px rgba(44, 0, 62, 0.08)",
+    },
+    children: [
+      stack(
+        6,
+        heading(title, 3, { color: theme.purple, fontSize: "1.18rem" }),
+        copy(text, { fontSize: "0.96rem", lineHeight: "1.45" })
+      ),
+    ],
+  });
+
 const contactPage = (): HTMLElement =>
   create("main", {
     attrs: { "aria-label": "Contact LEA Organization" },
     style: { background: theme.paper },
-    children: [contactHero(), contactFormsSection(), contactInfoSection(), landingFooter()],
+    children: [contactHero(), contactMapSection(), contactInfoSection(), landingFooter()],
   });
 
 const contactHero = (): HTMLElement =>
@@ -2341,9 +2461,9 @@ const contactHero = (): HTMLElement =>
                   letterSpacing: "0",
                   textShadow: "0 4px 22px rgba(0,0,0,0.52)",
                 },
-                children: ["Support the ", create("span", { text: "mission", style: { color: theme.orange } }), "."],
+                children: ["Contact ", create("span", { text: "LEA", style: { color: theme.orange } }), "."],
               }),
-              copy("Choose the path that fits you: partner with LEA, volunteer your time, or support learning resources through a donation inquiry.", {
+              copy("Send us a message, ask about partnerships, or reach the team directly. We will guide you to the right next step.", {
                 color: theme.white,
                 maxWidth: "720px",
                 fontWeight: "700",
@@ -2356,32 +2476,85 @@ const contactHero = (): HTMLElement =>
     ],
   });
 
-const contactFormsSection = (): HTMLElement =>
+const contactMapSection = (): HTMLElement =>
   section(
     theme.white,
     currentBreakpoint === "desktop" ? "86px 0 96px" : "62px 0 70px",
-    wideCardsContainer(
-      stack(
-        32,
-        stack(
-          10,
-          eyebrow("Get Involved", { color: theme.orange }),
-          heading("Partner, volunteer, or donate.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.65rem" : "2rem" }),
-          copy("Use the form that matches your next step. Each one gives LEA the details needed to follow up clearly.", {
-            maxWidth: "820px",
-          })
-        ),
-        create("div", {
-          style: {
-            display: "grid",
-            gridTemplateColumns: currentBreakpoint === "desktop" ? "repeat(3, minmax(0, 1fr))" : "1fr",
-            gap: "18px",
-          },
-          children: [partnerInterestForm(), volunteerInterestForm(), donateInterestForm()],
-        })
-      )
+    container(
+      create("div", {
+        style: {
+          display: "grid",
+          gridTemplateColumns: currentBreakpoint === "desktop" ? "1fr 1fr" : "1fr",
+          gap: currentBreakpoint === "desktop" ? "32px" : "24px",
+          alignItems: "stretch",
+        },
+        children: [
+          stack(
+            18,
+            eyebrow("Contact Form", { color: theme.orange }),
+            heading("Tell us what you need.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
+            copy("Use this form for general questions, school or community inquiries, partnership conversations, and follow-ups."),
+            contactInterestForm(),
+          ),
+          contactMapCard(),
+        ],
+      })
     )
   );
+
+const contactInterestForm = (): HTMLFormElement =>
+  interestForm("Contact", "Contact form", "For questions, school visits, partnerships, media, or general conversations with the LEA team.", "Send Message", [
+    formInput("Full name", "fullName", "Your name"),
+    formInput("Email address", "email", "you@example.com", "email"),
+    formInput("Phone number", "phone", "+254 ...", "tel", false),
+    formSelect("Reason for contact", "contactReason", ["General inquiry", "School / institution inquiry", "Partnership", "Media / events", "Other"]),
+    formTextArea("Message", "message", "Tell us how we can help."),
+  ]);
+
+const contactMapCard = (): HTMLElement =>
+  create("article", {
+    style: {
+      display: "grid",
+      gridTemplateRows: currentBreakpoint === "desktop" ? "minmax(360px, 1fr) auto" : "320px auto",
+      overflow: "hidden",
+      background: theme.purple,
+      border: `1px solid ${theme.line}`,
+      boxShadow: "0 18px 40px rgba(44, 0, 62, 0.14)",
+    },
+    children: [
+      create("iframe", {
+        attrs: {
+          title: "Map showing Nairobi, Kenya",
+          src: "https://www.google.com/maps?q=Nairobi%2C%20Kenya&output=embed",
+          loading: "lazy",
+          referrerpolicy: "no-referrer-when-downgrade",
+        },
+        style: {
+          width: "100%",
+          height: "100%",
+          minHeight: currentBreakpoint === "desktop" ? "360px" : "320px",
+          border: "0",
+          display: "block",
+        },
+      }),
+      create("div", {
+        style: {
+          display: "grid",
+          gap: "10px",
+          padding: "22px",
+          background: theme.purple,
+        },
+        children: [
+          eyebrow("Nairobi, Kenya", { color: theme.orange }),
+          heading("LEA Organization", 3, { color: theme.white, fontSize: "1.35rem" }),
+          copy("We work with schools, community projects, partners, volunteers, and learners across Nairobi and beyond.", {
+            color: "#eadbed",
+            fontSize: "0.98rem",
+          }),
+        ],
+      }),
+    ],
+  });
 
 const partnerInterestForm = (): HTMLFormElement =>
   interestForm("Partner", "Partner form", "For schools, community projects, companies, and organizations that want to host or support LEA programs.", "Submit Partner Interest", [
@@ -2478,7 +2651,7 @@ const landingActionsSection = (): HTMLElement => {
       text: "Your donation supports learning resources, sessions, devices, and opportunities for children who lack access.",
       image: "images/LEA pics/LEA-29.jpg",
       alt: "Volunteer mentoring LEA learners",
-      href: "/contact",
+      href: "/donate",
       button: "Donate Now",
     },
     {
@@ -2716,7 +2889,7 @@ const supportCollageSection = (): HTMLElement =>
               }),
               create("div", {
                 style: { display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "6px" },
-                children: [supportButton("/contact", "Donate", true), supportButton("/contact", "Partner", false)],
+                children: [supportButton("/donate", "Donate", true), supportButton("/contact", "Partner", false)],
               }),
             ],
           }),
@@ -3434,9 +3607,11 @@ function render(): void {
             ? eventsPage()
             : currentPage === "volunteer"
               ? volunteerPage()
-              : currentPage === "contact"
-                ? contactPage()
-                : emptyPage();
+              : currentPage === "donate"
+                ? donatePage()
+                : currentPage === "contact"
+                  ? contactPage()
+                  : emptyPage();
   app.replaceChildren(header(currentPage), content);
   if (window.location.hash) {
     window.requestAnimationFrame(() => {

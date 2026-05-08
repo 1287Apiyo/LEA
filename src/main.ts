@@ -2997,20 +2997,20 @@ const supportButton = (href: string, text: string, filled: boolean): HTMLAnchorE
 const landingFooter = (): HTMLElement =>
   create("footer", {
     style: {
-      background: "#050505",
+      background: `linear-gradient(180deg, ${theme.plum} 0%, #050505 100%)`,
       color: theme.white,
-      padding: currentBreakpoint === "desktop" ? "64px 0 30px" : "44px 0 26px",
-      borderTop: "1px solid rgba(255,255,255,0.12)",
+      padding: currentBreakpoint === "desktop" ? "76px 0 30px" : "52px 0 26px",
+      borderTop: `5px solid ${theme.orange}`,
     },
     children: [
       container(
         create("div", {
           style: {
             display: "grid",
-            gridTemplateColumns: currentBreakpoint === "desktop" ? "1.1fr 0.85fr 1.2fr" : "1fr",
-            gap: currentBreakpoint === "desktop" ? "70px" : "34px",
+            gridTemplateColumns: currentBreakpoint === "desktop" ? "1.25fr 0.8fr 1.1fr" : "1fr",
+            gap: currentBreakpoint === "desktop" ? "56px" : "34px",
             alignItems: "start",
-            paddingBottom: "38px",
+            paddingBottom: "42px",
             borderBottom: "1px solid rgba(255,255,255,0.12)",
           },
           children: [
@@ -3025,14 +3025,14 @@ const landingFooter = (): HTMLElement =>
             flexWrap: "wrap",
             justifyContent: "space-between",
             gap: "18px",
-            paddingTop: "24px",
+            paddingTop: "26px",
             color: "#b8aabc",
             fontSize: "0.95rem",
           },
           children: [
-            create("span", { text: "+254 746 821567", style: { color: theme.white, fontWeight: "700" } }),
-            create("a", { attrs: { href: "mailto:leaorganization@gmail.com" }, text: "leaorganization@gmail.com", style: { color: theme.white, fontWeight: "700", textDecoration: "none" } }),
-            create("span", { text: "Copyright 2026 LEA Organization. All rights reserved." }),
+            create("span", { text: "LEA Organization, Nairobi Kenya" }),
+            create("a", { attrs: { href: "mailto:leaorganization@gmail.com" }, text: "leaorganization@gmail.com", style: { color: theme.orange, fontWeight: "700", textDecoration: "none" } }),
+            create("span", { text: "Copyright 2026. All rights reserved." }),
           ],
         })
       ),
@@ -3041,40 +3041,71 @@ const landingFooter = (): HTMLElement =>
 
 const footerBrandColumn = (): HTMLElement =>
   stack(
-    18,
+    20,
     stack(
       8,
-      heading("LEA Organization", 3, { color: theme.white, fontSize: "1.35rem", textTransform: "uppercase" })
-    ),
-    stack(
-      2,
-      create("strong", { text: "Nairobi", style: { color: theme.white, fontSize: "1rem" } }),
-      create("span", { text: "Kenya", style: { color: "#b8aabc", fontWeight: "700" } })
+      heading("LEA Organization", 3, { color: theme.white, fontSize: "1.65rem", textTransform: "uppercase" }),
+      copy("Helping young learners meet coding early, build confidence, and see technology as something they can create with.", {
+        color: "#eadbed",
+        maxWidth: "420px",
+        fontSize: "1rem",
+      })
     ),
     create("div", {
-      style: { display: "flex", gap: "10px", marginTop: "2px" },
+      style: {
+        display: "grid",
+        gap: "10px",
+        maxWidth: "430px",
+      },
       children: [
-        footerSocial("IG", "#"),
-        footerSocial("X", "#"),
-        footerSocial("in", "#"),
+        footerContactCard("Phone", "+254 746 821567", "tel:+254746821567"),
+        footerContactCard("Email", "leaorganization@gmail.com", "mailto:leaorganization@gmail.com"),
+        footerContactCard("Location", "Applewood Adams, Ngong Road", "/contact"),
+      ],
+    }),
+    create("div", {
+      style: { display: "flex", gap: "10px", marginTop: "2px", flexWrap: "wrap" },
+      children: [
+        footerSocial("IG", "https://www.instagram.com/lea_orgke/"),
+        footerSocial("X", "https://x.com/lea_org"),
+        footerSocial("in", "https://www.linkedin.com/in/lea-organization-ke/"),
       ],
     })
   );
+
+const footerContactCard = (label: string, value: string, href: string): HTMLAnchorElement =>
+  create("a", {
+    attrs: { href },
+    style: {
+      display: "grid",
+      gap: "3px",
+      padding: "12px 14px",
+      background: "rgba(255,255,255,0.06)",
+      borderLeft: `3px solid ${theme.orange}`,
+      color: theme.white,
+      textDecoration: "none",
+    },
+    children: [
+      eyebrow(label, { color: theme.orange, fontSize: "0.7rem" }),
+      create("span", { text: value, style: { color: theme.white, fontSize: "0.98rem", fontWeight: "700", lineHeight: "1.25" } }),
+    ],
+  });
 
 const footerSocial = (label: string, href: string): HTMLAnchorElement => {
   const socialColors: Record<string, string> = { IG: "#e4405f", X: "#ffffff", in: "#0a66c2" };
 
   return create("a", {
-    attrs: { href, "aria-label": label },
+    attrs: { href, "aria-label": label, target: "_blank", rel: "noreferrer" },
     text: label,
     style: {
-      width: "42px",
-      height: "42px",
+      width: "44px",
+      height: "44px",
       display: "inline-grid",
       placeItems: "center",
-      border: "1px solid rgba(255,255,255,0.16)",
+      border: "1px solid rgba(255,255,255,0.18)",
+      background: "rgba(255,255,255,0.06)",
       color: socialColors[label] ?? theme.white,
-      fontSize: "0.82rem",
+      fontSize: "0.84rem",
       fontWeight: "700",
       textDecoration: "none",
     },
@@ -3084,10 +3115,12 @@ const footerSocial = (label: string, href: string): HTMLAnchorElement => {
 const footerLinksColumn = (): HTMLElement => {
   const links = [
     ["Home", "/"],
+    ["About", "/about"],
+    ["Programs", "/programs"],
     ["Projects", "/projects"],
-    ["Volunteer", "/volunteer"],
-    ["Team", "/about"],
     ["Events", "/events"],
+    ["Volunteer", "/volunteer"],
+    ["Donate", "/donate"],
     ["Contact", "/contact"],
   ] as const;
 
@@ -3098,14 +3131,22 @@ const footerLinksColumn = (): HTMLElement => {
       attrs: { "aria-label": "Footer quick links" },
       style: {
         display: "grid",
-        gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-        gap: "14px 30px",
+        gap: "11px",
       },
       children: links.map(([label, href]) =>
         create("a", {
           attrs: { href },
           text: label,
-          style: { color: "#d8d0dc", fontSize: "1rem", textDecoration: "none" },
+          style: {
+            display: "flex",
+            alignItems: "center",
+            minHeight: "34px",
+            paddingBottom: "8px",
+            borderBottom: "1px solid rgba(255,255,255,0.1)",
+            color: "#eadbed",
+            fontSize: "1rem",
+            textDecoration: "none",
+          },
         })
       ),
     })
@@ -3124,17 +3165,33 @@ const footerGalleryColumn = (): HTMLElement => {
 
   return stack(
     18,
-    heading("Gallery", 3, { color: theme.white, fontSize: "1.35rem" }),
+    stack(
+      8,
+      heading("Gallery", 3, { color: theme.white, fontSize: "1.35rem" }),
+      copy("A few moments from classrooms, community spaces, and program days.", {
+        color: "#eadbed",
+        fontSize: "0.96rem",
+        lineHeight: "1.45",
+      })
+    ),
     create("div", {
       style: {
         display: "grid",
-        gridTemplateColumns: "repeat(3, minmax(0, 96px))",
-        gap: "6px",
+        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+        gap: "8px",
       },
-      children: thumbnails.map(([src, alt]) =>
+      children: thumbnails.map(([src, alt], index) =>
         create("figure", {
-          style: { margin: "0", height: "66px", overflow: "hidden", background: theme.plum },
-          children: [image(src, alt, { objectPosition: "center" })],
+          style: {
+            margin: "0",
+            height: index === 0 ? "150px" : "76px",
+            gridColumn: index === 0 ? "span 2" : "auto",
+            gridRow: index === 0 ? "span 2" : "auto",
+            overflow: "hidden",
+            background: theme.plum,
+            border: "1px solid rgba(255,255,255,0.12)",
+          },
+          children: [image(src, alt, { objectPosition: "center", filter: "saturate(1.03) contrast(1.04)" })],
         })
       ),
     })

@@ -266,13 +266,6 @@ const header = (activePage: PageId): HTMLElement =>
       backdropFilter: "blur(12px)",
     },
     children: [
-      create("div", {
-        attrs: { "aria-hidden": "true" },
-        style: {
-          height: "4px",
-          background: `linear-gradient(90deg, ${theme.orange}, ${theme.purple})`,
-        },
-      }),
       container(
         create("div", {
           style: {
@@ -1589,9 +1582,9 @@ const partnerLogoCard = (name: string, label: string, logoSrc?: string): HTMLEle
       justifyItems: "center",
       gap: "12px",
       padding: "24px",
-      background: theme.white,
-      border: `1px solid ${theme.line}`,
-      borderTop: `5px solid ${theme.purple}`,
+      background: theme.purple,
+      border: `1px solid ${theme.purple}`,
+      borderTop: `5px solid ${theme.orange}`,
       textAlign: "center",
       boxShadow: "0 14px 32px rgba(44, 0, 62, 0.07)",
     },
@@ -1618,8 +1611,8 @@ const partnerLogoCard = (name: string, label: string, logoSrc?: string): HTMLEle
           }),
       stack(
         4,
-        heading(name, 3, { color: theme.purple, fontSize: "1.18rem" }),
-        copy(label, { color: theme.muted, fontSize: "0.94rem", lineHeight: "1.35" })
+        heading(name, 3, { color: theme.white, fontSize: "1.18rem" }),
+        copy(label, { color: "#f0e2f4", fontSize: "0.94rem", lineHeight: "1.35" })
       ),
     ],
   });

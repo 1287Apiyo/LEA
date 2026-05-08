@@ -484,7 +484,7 @@ const landingHero = (): HTMLElement =>
                   " Engineers",
                 ],
               }),
-              copy("We bridge the gap between curiosity and career-ready technical skills through intensive, hands-on coding education for the next generation.", {
+              copy("We introduce children and teens to coding early, then keep showing up with trainers, volunteers, projects, and patient support.", {
                 color: theme.white,
                 maxWidth: currentBreakpoint === "desktop" ? "600px" : "390px",
                 fontWeight: "700",
@@ -568,17 +568,17 @@ const storyTextPanel = (): HTMLElement =>
       stack(
         14,
         eyebrow("Our Story", { color: theme.orange }),
-        heading("We Prepare Them For A Future In Technology", 2, {
+        heading("Born from a love for coding and a reason to share it.", 2, {
           color: theme.white,
           maxWidth: "940px",
           fontSize: currentBreakpoint === "desktop" ? "2.2rem" : "1.82rem",
         }),
-        copy("LEA Organization was built on a simple belief: young learners should not have to wait for opportunity to find them. We bring practical coding, mentorship, and digital confidence into communities where access can change the direction of a life.", {
+        copy("LEA began on 14 May 2024, founded by Anne Apiyo and Felistus Kioko. It started with a shared love for coding and a feeling that children who are often left behind should meet technology early, not as something distant, but as something they can use, question, and build with.", {
           maxWidth: "940px",
           color: "#f4e8f7",
           fontWeight: "700",
         }),
-        copy("Through volunteers, schools, rescue centres, community partners, and hands-on learning days, we help learners move from curiosity to real projects they can understand, explain, and keep building.", {
+        copy("Through coding workshops, hackathons, student projects, and community learning days, we help learners build confidence one session at a time.", {
           maxWidth: "940px",
           color: "#eadbed",
         }),
@@ -1263,21 +1263,21 @@ const projectProfile = (project: Program): ProjectProfile => {
       focus: "Scratch Programming",
       learners: "Younger learners",
       image: "images/M1.jpeg",
-      summary: "At Mogra, LEA introduces children to Scratch through games, stories, animation, and playful logic. The goal is confidence first: learners see that code can be something they can touch, change, and explain.",
+      summary: "Mogra is home to younger children with big imaginations. Scratch fits that energy well because learners can make a cat move, tell a story, build a simple game, and immediately see that their choices matter.",
       status: "Active Scratch sessions",
     },
     "Mukuru Slums Development Project": {
       focus: "Web Development",
       learners: "Community learners",
       image: "images/LEA pics/coding3.jpg",
-      summary: "At MSDP, LEA runs web development pathways that help learners understand HTML, CSS, JavaScript, page structure, and presentation. The program has already grown into two web development graduation moments.",
+      summary: "MSDP learners came with commitment, and the web pathway gave that commitment a clear direction. HTML, CSS, JavaScript, structure, and presentation became real skills, not just words, and two cohorts have already reached graduation.",
       status: "Two web graduations",
     },
     "Highway Senior School": {
       focus: "Web Development",
       learners: "Secondary school learners",
       image: "images/LEA - HIGHWAY-1.jpg",
-      summary: "At Highway, LEA supports students with practical web learning: building pages, thinking through structure, and using technology as a serious academic and career pathway.",
+      summary: "Highway students are at a stage where practical skills can shape how they see the future. Web development gives them a useful starting point: pages they can build, improve, present, and connect to school or career goals.",
       status: "School web program",
     },
   };
@@ -1343,9 +1343,9 @@ const projectsHero = (): HTMLElement =>
                   letterSpacing: "0",
                   textShadow: "0 4px 22px rgba(0,0,0,0.52)",
                 },
-                children: ["Where LEA ", create("span", { text: "teaches", style: { color: theme.orange } }), "."],
+                children: ["Where LEA ", create("span", { text: "shows up", style: { color: theme.orange } }), "."],
               }),
-              copy("Our projects are the institutions and community spaces where LEA brings practical coding education: Mogra, MSDP, and Highway.", {
+              copy("Our projects are the places where learners, teachers, guardians, and volunteers meet around one simple idea: technology should feel possible.", {
                 color: theme.white,
                 maxWidth: "720px",
                 fontWeight: "700",
@@ -1372,11 +1372,11 @@ const projectsInstitutionsSection = (): HTMLElement =>
         stack(
           10,
           eyebrow("Institution Projects", { color: theme.orange }),
-          heading("Three learning homes, one technology mission.", 2, {
+          heading("Each place asks for something different.", 2, {
             maxWidth: "840px",
             fontSize: currentBreakpoint === "desktop" ? "2.7rem" : "2rem",
           }),
-          copy("Each project is shaped around the learners in that space: Scratch for younger children, web development for community and school learners, and milestones that show progress.", {
+          copy("Mogra needs playful first steps. MSDP needs a clear pathway learners can finish. Highway needs practical web skills students can carry into school, portfolios, and future work.", {
             maxWidth: "860px",
           })
         ),
@@ -2113,10 +2113,10 @@ const volunteerHero = (): HTMLElement =>
 
 const volunteerRolesSection = (): HTMLElement => {
   const roles = [
-    ["Mentor And Teach", "Guide learners through Scratch, web development, app thinking, and project confidence."],
-    ["Support Program Days", "Help with setup, attendance, learner support, coordination, and smooth session flow."],
-    ["Document The Work", "Capture photos, videos, stories, and updates that help the community see the impact."],
-    ["Events And Logistics", "Support graduations, meetups, hackathons, outreach days, and partner activities."],
+    ["Mentor And Teach", "Sit with learners, explain slowly, and help them make sense of Scratch, web pages, app ideas, and projects."],
+    ["Support Program Days", "Help with setup, attendance, learner questions, and the small things that keep a session calm."],
+    ["Document The Work", "Take photos, short videos, and honest stories so families, partners, and volunteers can see what is happening."],
+    ["Events And Logistics", "Help during graduations, meetups, hackathons, outreach days, and partner activities."],
   ] as const;
 
   return section(
@@ -2128,8 +2128,8 @@ const volunteerRolesSection = (): HTMLElement => {
         stack(
           10,
           eyebrow("How Volunteers Help", { color: theme.orange }),
-          heading("Many skills can serve the mission.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.65rem" : "2rem" }),
-          copy("You do not need to fit one narrow profile. LEA needs technical mentors, organizers, storytellers, and people who can consistently care about learner progress.", {
+          heading("There is room for different kinds of help.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.65rem" : "2rem" }),
+          copy("Some volunteers teach. Some help learners settle in. Some take photos, organize rooms, call parents, or simply notice when a child needs encouragement.", {
             maxWidth: "820px",
           })
         ),
@@ -2211,11 +2211,11 @@ const volunteerPeopleSection = (): HTMLElement => {
         stack(
           10,
           eyebrow("Volunteer Community", { color: theme.orange }),
-          heading("The people who show up.", 2, {
+          heading("People who have shown up for LEA.", 2, {
             color: theme.white,
             fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem",
           }),
-          copy("Meet the volunteer community behind LEA sessions, events, and learner support.", {
+          copy("These are some of the people who have given time, skill, and care to sessions, events, and learner support.", {
             color: "#eadbed",
             maxWidth: "760px",
           })
@@ -2324,8 +2324,8 @@ const volunteerSignupSection = (): HTMLElement =>
           stack(
             14,
             eyebrow("Sign Up", { color: theme.orange }),
-            heading("Tell us how you want to volunteer.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
-            copy("Share your skills, availability, and the type of support you want to offer. We will use this to match you to sessions, events, or mentorship needs."),
+            heading("Tell us where you can help.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
+            copy("Share what you are comfortable doing and when you are usually available. We will follow up with a role that fits a real program need."),
             aboutImagePanel("images/community.PNG", "LEA volunteers and community members", "Volunteer together", "brightness(0.58) contrast(1.08) saturate(1.04)"),
           ),
           volunteerInterestForm(),
@@ -2335,7 +2335,7 @@ const volunteerSignupSection = (): HTMLElement =>
   );
 
 const volunteerInterestForm = (): HTMLFormElement =>
-  interestForm("Volunteer", "Volunteer form", "For mentors, facilitators, event helpers, media support, and anyone ready to show up.", "Submit Volunteer Interest", [
+  interestForm("Volunteer", "Volunteer form", "For mentors, facilitators, event helpers, media support, and anyone ready to show up.", "Send Volunteer Details", [
     formInput("Full name", "fullName", "Your name"),
     formInput("Email address", "email", "you@example.com", "email"),
     formInput("Phone number", "phone", "+254 ...", "tel"),
@@ -2397,9 +2397,9 @@ const donateHero = (): HTMLElement =>
                   letterSpacing: "0",
                   textShadow: "0 4px 22px rgba(0,0,0,0.52)",
                 },
-                children: ["Fuel the ", create("span", { text: "mission", style: { color: theme.orange } }), "."],
+                children: ["Help a learner ", create("span", { text: "keep going", style: { color: theme.orange } }), "."],
               }),
-              copy("Your support helps LEA provide learning resources, devices, sessions, meals, transport, and opportunities for young learners who deserve access to technology.", {
+              copy("A donation can mean printed guides, internet for a session, transport for volunteers, a meal on a long learning day, or a device a learner finally gets to use.", {
                 color: theme.white,
                 maxWidth: "720px",
                 fontWeight: "700",
@@ -2430,14 +2430,14 @@ const donateFormSection = (): HTMLElement =>
           stack(
             18,
             eyebrow("Donation Support", { color: theme.orange }),
-            heading("Choose what your gift should strengthen.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
-            copy("Every contribution helps us keep practical learning within reach. You can support materials, devices, transport, events, or general program delivery."),
+            heading("Tell us how you would like to help.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
+            copy("We keep donations close to the work: class materials, devices, transport, meals, events, and the quiet costs that make sessions possible."),
             create("div", {
               style: { display: "grid", gap: "12px", marginTop: "8px" },
               children: [
-                donationFocusCard("Learning materials", "Printed guides, project resources, and learner support materials."),
-                donationFocusCard("Devices and equipment", "Laptops, accessories, internet support, and classroom tools."),
-                donationFocusCard("Meals, transport, and events", "The practical support that helps learners and volunteers show up."),
+                donationFocusCard("Learning materials", "Guides, project sheets, and the small tools learners use during sessions."),
+                donationFocusCard("Devices and internet", "Laptops, accessories, bundles, and classroom tools when a centre needs support."),
+                donationFocusCard("Meals, transport, and events", "The day-to-day support that helps learners and volunteers show up and stay present."),
               ],
             })
           ),
@@ -2548,8 +2548,8 @@ const contactMapSection = (): HTMLElement =>
           stack(
             18,
             eyebrow("Contact Form", { color: theme.orange }),
-            heading("Tell us what you need.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
-            copy("Use this form for general questions, school or community inquiries, partnership conversations, and follow-ups."),
+            heading("Write to us directly.", 2, { fontSize: currentBreakpoint === "desktop" ? "2.55rem" : "2rem" }),
+            copy("Send a question, invite us into a conversation, or tell us about a school, centre, or community that could use a coding program."),
             contactInterestForm(),
           ),
           contactMapCard(),
@@ -2564,7 +2564,7 @@ const contactInterestForm = (): HTMLFormElement =>
     formInput("Email address", "email", "you@example.com", "email"),
     formInput("Phone number", "phone", "+254 ...", "tel", false),
     formSelect("Reason for contact", "contactReason", ["General inquiry", "School / institution inquiry", "Partnership", "Media / events", "Other"]),
-    formTextArea("Message", "message", "Tell us how we can help."),
+    formTextArea("Message", "message", "Write your message here."),
   ]);
 
 const contactMapCard = (): HTMLElement =>
@@ -2581,7 +2581,7 @@ const contactMapCard = (): HTMLElement =>
       create("iframe", {
         attrs: {
           title: "Map showing Nairobi, Kenya",
-          src: "https://www.google.com/maps?q=Nairobi%2C%20Kenya&output=embed",
+          src: "https://www.google.com/maps?q=Applewood%20Adams%20Ngong%20Road%2C%20Nairobi%2C%20Kenya&output=embed",
           loading: "lazy",
           referrerpolicy: "no-referrer-when-downgrade",
         },
@@ -2601,9 +2601,9 @@ const contactMapCard = (): HTMLElement =>
           background: theme.purple,
         },
         children: [
-          eyebrow("Nairobi, Kenya", { color: theme.orange }),
+          eyebrow("Applewood Adams, Ngong Road", { color: theme.orange }),
           heading("LEA Organization", 3, { color: theme.white, fontSize: "1.35rem" }),
-          copy("We work with schools, community projects, partners, volunteers, and learners across Nairobi and beyond.", {
+          copy("Visit or reach out from Applewood Adams on Ngong Road. We work with schools, community projects, partners, volunteers, and learners across Nairobi and beyond.", {
             color: "#eadbed",
             fontSize: "0.98rem",
           }),
@@ -2656,7 +2656,7 @@ const contactInfoSection = (): HTMLElement =>
             children: [
               contactInfoCard("Phone", "+254 746 821567"),
               contactInfoCard("Email", "leaorganization@gmail.com"),
-              contactInfoCard("Location", "Nairobi, Kenya"),
+              contactInfoCard("Location", "Applewood Adams, Ngong Road"),
             ],
           }),
         ],
@@ -2694,8 +2694,8 @@ const landingActionsSection = (): HTMLElement => {
   const actions: LandingAction[] = [
     {
       title: "What We Do",
-      label: "Technology access",
-      text: "We open doors to technology for young learners aged 9 to 18 through practical coding, mentorship, and digital confidence.",
+      label: "Coding sessions",
+      text: "We run beginner-friendly coding sessions for learners aged 9 to 18, with room to ask questions, make mistakes, and build.",
       image: "images/LEA pics/LEA-3.jpg",
       alt: "LEA learners during a technology session",
       href: "/programs",
@@ -2703,8 +2703,8 @@ const landingActionsSection = (): HTMLElement => {
     },
     {
       title: "Give Donation",
-      label: "Fuel the mission",
-      text: "Your donation supports learning resources, sessions, devices, and opportunities for children who lack access.",
+      label: "Keep sessions moving",
+      text: "Your support helps with materials, devices, internet, meals, transport, and the ordinary costs behind every learning day.",
       image: "images/LEA pics/LEA-29.jpg",
       alt: "Volunteer mentoring LEA learners",
       href: "/donate",
@@ -2713,7 +2713,7 @@ const landingActionsSection = (): HTMLElement => {
     {
       title: "Become a Volunteer",
       label: "Mentor and teach",
-      text: "Share your expertise, encourage young minds, and help learners discover what they can build with technology.",
+      text: "Show up with your skill, patience, and encouragement. Sometimes one calm mentor changes how a learner sees themselves.",
       image: "images/community.PNG",
       alt: "LEA volunteers and community members",
       href: "/volunteer",
@@ -2721,8 +2721,8 @@ const landingActionsSection = (): HTMLElement => {
     },
     {
       title: "Become a Partner",
-      label: "Grow the impact",
-      text: "Partner with us to expand access, strengthen programs, and create meaningful opportunities for young learners.",
+      label: "Open a door",
+      text: "Work with us through a school, centre, company, or community space so more learners can meet technology early.",
       image: "images/LEA pics/LEA-24.jpg",
       alt: "LEA learners working together",
       href: "/contact",
@@ -2756,13 +2756,13 @@ const landingActionsSection = (): HTMLElement => {
                 eyebrow("LEA Organization: Get Involved", { color: theme.orange }),
               ],
             }),
-            heading("Choose how you want to support the mission.", 2, {
+            heading("There is more than one way to help.", 2, {
               maxWidth: currentBreakpoint === "desktop" ? "760px" : "100%",
               fontSize: currentBreakpoint === "desktop" ? "3.15rem" : "2.25rem",
               lineHeight: "1.04",
               color: "#111018",
             }),
-            copy("Explore what we do, give, volunteer, or partner with us to help more young learners access technology.", {
+            copy("You can bring learners, donate resources, volunteer your time, or partner with us on a program that fits your community.", {
               maxWidth: "760px",
               color: "#17111b",
               fontSize: currentBreakpoint === "desktop" ? "1rem" : "0.98rem",
@@ -3231,13 +3231,13 @@ const aboutHero = (): HTMLElement =>
             stack(
               18,
               eyebrow("About LEA Organization", { color: theme.orange }),
-              heading("Opening access to technology, one learner at a time.", 1, {
+              heading("Coding can open a door. We help learners walk through it.", 1, {
                 color: theme.white,
                 maxWidth: currentBreakpoint === "desktop" ? "760px" : "100%",
                 fontSize: currentBreakpoint === "desktop" ? "4rem" : "2.75rem",
                 textShadow: "0 4px 22px rgba(0,0,0,0.48)",
               }),
-              copy("We create practical coding experiences, mentorship, and community-led learning spaces for young people who deserve a fair path into technology.", {
+              copy("LEA was founded by Anne Apiyo and Felistus Kioko on 14 May 2024. We teach coding early, build confidence slowly, and give learners steady support from trainers and volunteers.", {
                 color: theme.white,
                 maxWidth: "720px",
                 fontWeight: "700",
@@ -3273,11 +3273,11 @@ const aboutMissionSection = (): HTMLElement =>
             stack(
               16,
               eyebrow("Who We Are", { color: theme.orange }),
-              heading("A community of builders, mentors, and learners.", 2, {
+              heading("Started by two coders who wanted to give more children a fair chance.", 2, {
                 fontSize: currentBreakpoint === "desktop" ? "2.65rem" : "2rem",
               }),
-              copy("LEA Organization brings coding education closer to learners through schools, rescue centres, community projects, volunteers, and practical learning days."),
-              copy("Our work is hands-on: learners do not only hear about technology, they use it to make projects, solve problems, present ideas, and build confidence."),
+              copy("In many communities, access to technology still decides who gets to imagine a future in it. LEA exists so that background does not decide whether a child gets to learn, build, and belong in the digital world."),
+              copy("We use coding workshops, hackathons, student projects, and community sessions to help learners think boldly, create confidently, and discover possibilities they may not have seen before."),
             ),
           ],
         }),
@@ -3288,10 +3288,10 @@ const aboutMissionSection = (): HTMLElement =>
             gap: "18px",
           },
           children: [
-            aboutStatementCard("Mission", "To make practical technology education accessible to young learners and help them grow the confidence to create.", "target"),
-            aboutStatementCard("Vision", "A generation of young people who can imagine, build, and participate meaningfully in the digital world.", "eye"),
-            aboutStatementCard("Focus", "Learners aged 9 to 18, especially in communities where access to coding, devices, and mentorship can change real outcomes.", "focus"),
-            aboutStatementCard("Method", "Project-based sessions, volunteer mentorship, community partnerships, and learning pathways that move from curiosity to real work.", "route"),
+            aboutStatementCard("Mission", "To ignite a passion for coding in students through dynamic and inclusive learning experiences, preparing them for the opportunities and challenges of the digital age.", "target"),
+            aboutStatementCard("Vision", "A future where all students, regardless of background, have the skills and confidence to thrive in a technology-driven world, contributing to a more inclusive and innovative society.", "eye"),
+            aboutStatementCard("Focus", "We introduce young minds to coding early, especially learners who have not had enough access to devices, trainers, and digital learning spaces.", "focus"),
+            aboutStatementCard("Method", "We teach through workshops, hackathons, student projects, volunteer support, and steady practice that lets learners grow at a human pace.", "route"),
           ],
         })
       )

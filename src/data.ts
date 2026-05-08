@@ -68,14 +68,14 @@ export const homeCards: Card[] = [
   },
   {
     title: "Give Donation",
-    text: "Your support fuels learning resources, devices, sessions, and opportunities for children who lack access.",
+    text: "Help us cover the simple things that make learning possible: materials, devices, internet, meals, and transport.",
     image: "images/LEA pics/LEA-24.jpg",
     alt: "LEA learners sharing ideas",
     href: "/donate",
   },
   {
     title: "Become a Volunteer",
-    text: "Mentor, teach, encourage, and help young minds discover what they can create with technology.",
+    text: "Bring your time, patience, and skills. A learner may remember your encouragement long after the session ends.",
     image: "images/LEA pics/LEA-29.jpg",
     alt: "Volunteer mentoring a young learner",
     href: "/volunteer#sign-up",
@@ -90,7 +90,7 @@ export const programs: Program[] = [
     alt: "Children at Mogra Children's Rescue Centre during a LEA activity",
     paragraphs: [
       "Mogra Children's Rescue Centre is a sanctuary for vulnerable children, offering safety, education, healthcare, and support.",
-      "LEA teaches here because technology can open greater possibilities in such a nurturing space.",
+      "The children at Mogra are curious and expressive, so Scratch gives them a gentle way to turn stories, games, and ideas into something they can see working on screen.",
     ],
   },
   {
@@ -100,7 +100,7 @@ export const programs: Program[] = [
     alt: "Highway Senior School coding session",
     paragraphs: [
       "Highway Senior School focuses on academic excellence, holistic development, discipline, and shaping future leaders.",
-      "Digital literacy strengthens an ambitious learning environment and prepares students for a rapidly evolving digital world.",
+      "Highway learners are already thinking about the future. Web development gives them a skill they can connect to school work, portfolios, and career choices.",
     ],
   },
   {
@@ -110,7 +110,7 @@ export const programs: Program[] = [
     alt: "Learners coding during an MSDP session",
     paragraphs: [
       "MSDP supports children, youth, and women in informal settlements through education, protection, and economic opportunities.",
-      "By bringing coding to MSDP, LEA helps young people see that their background does not limit their future.",
+      "MSDP showed us what happens when learners get a clear path and steady support. The web development cohorts grew into graduation moments because the learners kept showing up and building.",
     ],
   },
 ];
@@ -134,7 +134,6 @@ export const volunteers: Person[] = [
   { name: "Kelvin Ekisa", role: "Software Developer", image: "images/volunteers/Ekisa.jpeg" },
   { name: "Ezekiel Njeri", role: "Software Developer", image: "images/volunteers/Ezekiel.jpeg" },
   { name: "Michael Eleman", role: "Software Developer", image: "images/volunteers/Mike.svg" },
-  { name: "Felix Kemboi", role: "Software Developer", image: "images/volunteers/Felix.png" },
   { name: "Adan Lolo", role: "Software Developer", image: "images/volunteers/Lolo.jpeg" },
   { name: "Collins Kibet", role: "Software Developer", image: "images/volunteers/Collo.jpg" },
   { name: "Cedrouseroll Omondi", role: "Software Engineer", image: "images/volunteers/Cedrouseroll-Omondi.jpg" },
@@ -142,19 +141,14 @@ export const volunteers: Person[] = [
   { name: "Victor Soimo", role: "Software Developer", image: "images/volunteers/Soimo.jpeg" },
   { name: "Emmanuel Musolomi", role: "Software Developer", image: "images/volunteers/Musolomi.jpg" },
   { name: "Charleen Bhakita", role: "Student", image: "images/volunteers/charleen.jpg" },
-  { name: "Clarence Mabeya", role: "Fintech", image: "images/volunteers/Clarence.jpeg" },
   { name: "Everlyne Njuguna", role: "Student", image: "images/volunteers/Everlyne Njuguna.jpg" },
   { name: "Moses Okode", role: "Software Developer", image: "images/volunteers/Moses-Okode.png" },
   { name: "Robi Melvin", role: "Student", image: "images/volunteers/Robi.jpeg" },
   { name: "Junechelsea Undisa", role: "Student", image: "images/volunteers/June.jpeg" },
   { name: "Joy Kasusya", role: "Network Engineer", image: "images/volunteers/kasusya.png" },
   { name: "Peter Mwangi", role: "Network Engineer", image: "images/volunteers/Peter-Mwangi.jpg" },
-  { name: "Grace Mwaura", role: "Student", image: "images/volunteers/Grace-Mwaura.jpg" },
-  { name: "David Musumba", role: "Student", image: "images/volunteers/David-Musumba.png" },
-  { name: "James Thiong'o", role: "Student", image: "images/volunteers/James-Thiongo.jpg" },
   { name: "Tony Wangolo", role: "Student", image: "images/volunteers/Tony.jpeg" },
   { name: "Evans Osumba", role: "Web Developer", image: "images/volunteers/evans.jpg" },
-  { name: "Philip Waudo", role: "Student", image: "images/volunteers/philip.jpg" },
 ];
 
 export const events: EventItem[] = [
